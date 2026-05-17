@@ -292,8 +292,7 @@ class UwbRangingModule : Module() {
                             "message" to (t.message ?: "Unknown ranging error"),
                         ))
                     }
-                    .onEach { result -> dispatchRangingResult(result) }
-                    .collect()
+                    .collect { result -> dispatchRangingResult(result) }
 
             } catch (t: Throwable) {
                 Log.e(TAG, "startRanging failed", t)

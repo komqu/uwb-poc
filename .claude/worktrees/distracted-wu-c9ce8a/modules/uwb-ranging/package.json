@@ -1,0 +1,9 @@
+{
+  "name": "uwb-ranging",
+  "version": "0.1.0",
+  "description": "Expo native module wrapping the Android Jetpack UWB ranging API + a BLE GATT OOB handshake.",
+  "main": "index.ts",
+  "types": "index.ts",
+  "keywords": ["expo", "uwb", "ranging", "ble", "android"],
+  "private": true
+}

@@ -58,6 +58,10 @@ internal class BleGattServer(
     private var advertiser: BluetoothLeAdvertiser? = null
     private var characteristic: BluetoothGattCharacteristic? = null
     private var connectedDevice: BluetoothDevice? = null
+    private var cccdEnabled: Boolean = false
+
+    // Payload queued while waiting for the controlee to enable notifications.
+    private var pendingNotifyPayload: String? = null
 
     var listener: Listener? = null
 
@@ -119,8 +123,26 @@ internal class BleGattServer(
     fun notifySessionParams(payload: String) {
         val char = characteristic ?: return
         val device = connectedDevice ?: return
-        char.value = payload.toByteArray(Charsets.UTF_8)
-        gattServer?.notifyCharacteristicChanged(device, char, false)
+        if (!cccdEnabled) {
+            // Controlee hasn't subscribed yet — queue and send once CCCD arrives.
+            Log.d(TAG, "CCCD not yet enabled, queuing notification")
+            pendingNotifyPayload = payload
+            return
+        }
+        sendNotification(device, char, payload)
+    }
+
+    private fun sendNotification(device: BluetoothDevice, char: BluetoothGattCharacteristic, payload: String) {
+        val bytes = payload.toByteArray(Charsets.UTF_8)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            gattServer?.notifyCharacteristicChanged(device, char, false, bytes)
+        } else {
+            @Suppress("DEPRECATION")
+            char.value = bytes
+            @Suppress("DEPRECATION")
+            gattServer?.notifyCharacteristicChanged(device, char, false)
+        }
+        Log.d(TAG, "Notification sent (${bytes.size} bytes)")
     }
 
     fun stop() {
@@ -130,6 +152,8 @@ internal class BleGattServer(
         advertiser = null
         characteristic = null
         connectedDevice = null
+        cccdEnabled = false
+        pendingNotifyPayload = null
     }
 
     // -------------- Callbacks ----------------
@@ -189,6 +213,18 @@ internal class BleGattServer(
             // The controlee enabling notifications on the CCCD.
             if (responseNeeded) {
                 gattServer?.sendResponse(device, requestId, BluetoothGatt.GATT_SUCCESS, 0, null)
+            }
+            val enabling = value.contentEquals(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE)
+            cccdEnabled = enabling
+            Log.d(TAG, "CCCD ${if (enabling) "enabled" else "disabled"} by ${device.address}")
+
+            // If the controller already called notifySessionParams before the
+            // CCCD was set up, send the queued payload now.
+            if (enabling) {
+                val queued = pendingNotifyPayload ?: return
+                pendingNotifyPayload = null
+                val char = characteristic ?: return
+                sendNotification(device, char, queued)
             }
         }
     }

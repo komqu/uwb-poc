@@ -1,0 +1,18 @@
+<lint-module
+    format="1"
+    dir="/home/jonas/projects/UwbPoC/modules/uwb-ranging/android"
+    name=":uwb-ranging"
+    type="LIBRARY"
+    maven="expo.modules.uwbranging:uwb-ranging:"
+    agpVersion="8.2.1"
+    buildFolder="build"
+    bootClassPath="/home/jonas/Android/sdk/platforms/android-34/android.jar:/home/jonas/Android/sdk/build-tools/34.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-34"
+    neverShrinking="true">
+  <lintOptions
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>

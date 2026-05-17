@@ -1,0 +1,50 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:2:1-21:12
+	package
+		INJECTED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.UWB_RANGING
+ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:5:5-70
+	android:name
+		ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:5:22-67
+uses-feature#android.hardware.uwb
+ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:6:5-8:35
+	android:required
+		ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:8:9-32
+	android:name
+		ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:7:9-44
+uses-permission#android.permission.BLUETOOTH_SCAN
+ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:11:5-12:58
+	android:usesPermissionFlags
+		ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:12:9-55
+	android:name
+		ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:11:22-70
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:13:5-76
+	android:name
+		ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:13:22-73
+uses-permission#android.permission.BLUETOOTH_ADVERTISE
+ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:14:5-78
+	android:name
+		ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:14:22-75
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:17:5-79
+	android:name
+		ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:17:22-76
+uses-feature#android.hardware.bluetooth_le
+ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:19:5-90
+	android:required
+		ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:19:64-87
+	android:name
+		ADDED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:19:19-63
+uses-sdk
+INJECTED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml
+INJECTED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml

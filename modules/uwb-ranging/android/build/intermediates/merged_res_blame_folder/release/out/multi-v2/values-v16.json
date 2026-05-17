@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "expo.modules.uwbranging.uwb-ranging-merged_res-33:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/home/jonas/.gradle/caches/8.8/transforms/b41812d9e57d5eeaa02883962fea49be/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "expo.modules.uwbranging.uwb-ranging-mergeReleaseResources-31:/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/home/jonas/.gradle/caches/8.8/transforms/b41812d9e57d5eeaa02883962fea49be/transformed/appcompat-1.6.1/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    }
+                }
+            ]
+        }
+    ]
+}

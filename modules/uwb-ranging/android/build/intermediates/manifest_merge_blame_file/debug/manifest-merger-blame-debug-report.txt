@@ -1,0 +1,45 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="expo.modules.uwbranging" >
+4
+5    <uses-sdk android:minSdkVersion="33" />
+6
+7    <!-- UWB -->
+8    <uses-permission android:name="android.permission.UWB_RANGING" />
+8-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:5:5-70
+8-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:5:22-67
+9
+10    <uses-feature
+10-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:6:5-8:35
+11        android:name="android.hardware.uwb"
+11-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:7:9-44
+12        android:required="true" />
+12-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:8:9-32
+13
+14    <!-- BLE (Android 12+ runtime perms) -->
+15    <uses-permission
+15-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:11:5-12:58
+16        android:name="android.permission.BLUETOOTH_SCAN"
+16-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:11:22-70
+17        android:usesPermissionFlags="neverForLocation" />
+17-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:12:9-55
+18    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+18-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:13:5-76
+18-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:13:22-73
+19    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+19-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:14:5-78
+19-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:14:22-75
+20
+21    <!-- Some OEM stacks still demand fine location for BLE scan results. -->
+22    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+22-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:17:5-79
+22-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:17:22-76
+23
+24    <uses-feature
+24-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:19:5-90
+25        android:name="android.hardware.bluetooth_le"
+25-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:19:19-63
+26        android:required="true" />
+26-->/home/jonas/projects/UwbPoC/modules/uwb-ranging/android/src/main/AndroidManifest.xml:19:64-87
+27
+28</manifest>

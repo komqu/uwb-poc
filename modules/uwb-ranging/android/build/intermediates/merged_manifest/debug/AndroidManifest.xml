@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="expo.modules.uwbranging" >
+
+    <uses-sdk android:minSdkVersion="33" />
+
+    <!-- UWB -->
+    <uses-permission android:name="android.permission.UWB_RANGING" />
+
+    <uses-feature
+        android:name="android.hardware.uwb"
+        android:required="true" />
+
+    <!-- BLE (Android 12+ runtime perms) -->
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+
+    <!-- Some OEM stacks still demand fine location for BLE scan results. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+</manifest>

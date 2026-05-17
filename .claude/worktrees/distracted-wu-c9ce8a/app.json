@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "UWB PoC",
+    "slug": "uwb-poc",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "uwbpoc",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": false,
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.example.uwbpoc"
+    },
+    "android": {
+      "package": "com.example.uwbpoc",
+      "minSdkVersion": 33,
+      "compileSdkVersion": 34,
+      "targetSdkVersion": 34,
+      "permissions": [
+        "android.permission.UWB_RANGING",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH_ADVERTISE",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 33,
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34,
+            "kotlinVersion": "1.9.24"
+          }
+        }
+      ],
+      "./modules/uwb-ranging"
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "uwbServiceUuid": "0000ffe0-0000-1000-8000-00805f9b34fb",
+      "uwbCharacteristicUuid": "0000ffe1-0000-1000-8000-00805f9b34fb"
+    },
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

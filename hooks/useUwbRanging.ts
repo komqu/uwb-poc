@@ -57,8 +57,9 @@ function makePairingCode(): string {
 }
 
 function makeSessionKeyHex(): string {
-  // 16-byte (128-bit) random session key, hex-encoded.
-  const bytes = new Uint8Array(16);
+  // 8-byte (64-bit) random session key, hex-encoded.
+  // CONFIG_UNICAST_DS_TWR with Static STS requires exactly 8 bytes.
+  const bytes = new Uint8Array(8);
   for (let i = 0; i < bytes.length; i++) bytes[i] = Math.floor(Math.random() * 256);
   return Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('').toUpperCase();
 }
